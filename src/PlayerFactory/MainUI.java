@@ -10,14 +10,22 @@ public class MainUI {
         aGame.play(5, player1, player2);
     }
 
+
     private static Player getPlayer() {
         Scanner scanner = new Scanner(System. in);
         String playerType = scanner.nextLine();
         System.out.println("What kind of player do you want to create? Fighter or Wizard");
-        if (playerType.equals("Fighter"))
-            return new Fighter();
-        if (playerType.equals("Wizard"))
-            return new Wizard();
+        PlayerFactory pf1 = null;
+        if (playerType.equals("Fighter")){
+            pf1 = new FighterFactory();
+            return pf1.makePlayer();
+
+        }
+        if (playerType.equals("Wizard")) {
+
+            pf1 = new WizardFactory();
+            return pf1.makePlayer();
+        }
         return null;
     }
 }

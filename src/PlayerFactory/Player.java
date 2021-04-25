@@ -12,6 +12,14 @@ public abstract class Player {
     String askForAttackLine;
     String attackLine;
 
+   public Player(String name, String power, String weapon,String  openingLine, String attackLine){
+       this.name = name;
+       this.power = power;
+       this.weapon = weapon;
+       this.openingLine = openingLine;
+       this.attackLine = attackLine;
+   }
+
     void play(){
         System.out.println(attackLine);
         System.out.println("I will now use my "+weapon+" upon you with power level "+power);
